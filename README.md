@@ -1,14 +1,30 @@
-Rail Maintenance Simulator
-Un joc de simulare și strategie 3D dezvoltat în C++ folosind OpenGL. Jucătorul preia rolul unui mecanic care trebuie să mențină infrastructura feroviară funcțională în timp ce trenurile circulă autonom între stații.
+# Rail Maintenance Simulator
 
-Mecanici de Joc
-- Sistem de Avarii Aleatorii: Segmentele de șină se deteriorează în timp (probabilitate random). Avariile sunt vizibile prin deformare geometrică și efecte de culoare/flicker.
-- Reparații cu Drezina: Jucătorul controlează o drezină animată (WASD) și trebuie să ajungă la segmentele defecte pentru a le repara (tasta F).
-- Trenuri Autonome: Locomotivele parcurg traseul și opresc automat în fața șinelor avariate. Acestea staționează în cele minim 3 stații înainte de a primi o destinație nouă.
-- Condiții de Game Over: Jocul se termină dacă un tren așteaptă prea mult (peste 30s) sau dacă gradul de avariere al traseului depășește 50%.
+A 3D simulation and strategy game developed in **C++** using **OpenGL**. The player takes on the role of a railway mechanic tasked with maintaining the track infrastructure while autonomous trains continuously navigate between stations.
 
-Detalii Tehnice
-- Randare 3D: Implementarea unui traseu complex cu porțiuni la suprafață și suspendate.
-- Control Cameră: Perspectivă Third-Person (TPS) care urmărește dinamic mișcarea drezinei.
-- Animații: Mișcare de balans pentru mânerul drezinei și transformări geometrice pentru segmentele avariate.
-- Interfață (UI/Minimap): Mapă 2D care indică starea segmentelor (funcțional/avariat) și poziția jucătorului.
+This project showcases 3D rendering techniques, autonomous agent behaviors, dynamic camera systems, and real-time state management.
+
+## 🚀 Gameplay Mechanics
+
+* **Dynamic Degradation System**: Railway segments degrade randomly over time. Damage is visually indicated through geometric deformations and color/flickering effects.
+* **Handcar Repairs**: The player controls an animated handcar using standard `WASD` movement and interacts with damaged segments to repair them (using the `F` key).
+* **Autonomous Trains**: AI-driven locomotives navigate the track network, automatically halting before damaged rails to prevent derailments. They dock at a minimum of three distinct stations before receiving new destinations.
+* **Game Over Conditions**: The simulation ends if a train is forced to wait for repairs for more than 30 seconds, or if the overall track degradation exceeds 50%.
+
+## 🧠 Technical Implementation
+
+* **3D Rendering**: Implements a complex track layout featuring both ground-level and suspended/elevated railway portions.
+* **Camera Control**: Features a dynamic Third-Person (TPS) camera perspective that smoothly tracks the player's handcar.
+* **Procedural Animations**: Includes kinematic animations, such as the swinging motion of the handcar's lever and real-time geometric transformations for breaking/repairing rail segments.
+* **UI & Minimap**: Features a 2D graphical overlay (minimap) indicating the real-time status of all track segments (functional vs. damaged) and the player's current position.
+
+## 💻 Build and Run
+
+To compile and run the game locally, you need a C++ compiler, **CMake**, and an OpenGL-compatible environment.
+
+```bash
+# Example build steps (assuming CMake and dependencies are installed)
+mkdir build && cd build
+cmake ..
+make
+# Run the executable generated in the build/bin folder
